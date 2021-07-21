@@ -975,11 +975,10 @@ describe('User', () => {
 			const uid = await User.create({ username: longName });
 			await socketUser.changeUsernameEmail({ uid: uid }, { uid: uid, username: longName, email: 'verylong@name.com' });
 			const userData = await db.getObject(`user:${uid}`);
-			assert.strictEqual(userData.username, longName);
+			const awaitingValidation = await User.email.isValidationPending(uid, 'verylong@name.com');
 
-			const event = (await events.getEvents('email-confirmation-sent', 0, 0)).pop();
-			assert.strictEqual(parseInt(event.uid, 10), uid);
-			assert.strictEqual(event.email, 'verylong@name.com');
+			assert.strictEqual(userData.username, longName);
+			assert.strictEqual(awaitingValidation, true);
 		});
 
 		it('should not update a user\'s username if it did not change', (done) => {
