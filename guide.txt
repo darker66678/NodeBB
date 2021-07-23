@@ -1,0 +1,21 @@
+bulid mongodb
+TERMINAL docker run -d -p 27017:27017 mongo
+
+
+copy install/package.json
+paste 在主目錄
+TERMINAL npm install
+         npm cache clean --force
+         node ./nodebb setup
+一路enter
+到Administrator username 要輸入管理員帳密 信箱  /我都設admin/admin123
+TERMINAL node ./nodebb start
+成功~~
+
+
+
+#git push
+1.git add .
+2.git commit -m "add Message"
+3.git push
+4.git log
