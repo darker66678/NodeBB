@@ -2,6 +2,7 @@
     "url": "http://localhost:4567",
     "secret": "05ca2d24-d839-4517-ab9b-8e279e413a27",
     "database": "mongo",
+    "port": "4567",
     "mongo": {
         "host": "127.0.0.1",
         "port": 27017,
@@ -9,6 +10,5 @@
         "password": "",
         "database": "nodebb",
         "uri": " mongodb+srv://tsmc_intern_2021:SJLDStsmc2021@cluster0.uensa.mongodb.net/Cluster0?retryWrites=true&w=majority"
-    },
-    "port": "4567"
+    }
 }
