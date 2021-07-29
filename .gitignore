@@ -23,7 +23,7 @@ node_modules/
 
 # logs/
 
-# pidfile
+pidfile
 
 # # templates
 # /public/templates
