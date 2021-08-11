@@ -19,6 +19,12 @@ To run GTT, please follow the following steps
 5. the service should be available at [http://localhost:4567/](http://localhost:4567/) or `http://4567-*****.gitpod.io`
 
 For more details, please refer to [NodeBB installation documentation](https://docs.nodebb.org/installing/os)
+## buliding Search engine
+We use Apache Solr as our Search engine
+
+1. run `docker pull solr` to get solr image
+2. run `docker run --restart always --name solr -d -p 8983:8983 -t solr` to bulid solr
+3. run `docker exec -it --user=solr solr bin/solr create_core -c nodebb` to bulid a nodebb core
 
 ## License
 
